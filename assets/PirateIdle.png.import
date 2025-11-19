@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjql3j56eck61"
-path="res://.godot/imported/Slash.png-ba7bc4f19ef6a37d50400a73d95653a4.ctex"
+uid="uid://cluk3fapnp3a1"
+path="res://.godot/imported/PirateIdle.png-dace9babfe4aee5fe807a0223bd2d34f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Slash.png"
-dest_files=["res://.godot/imported/Slash.png-ba7bc4f19ef6a37d50400a73d95653a4.ctex"]
+source_file="res://assets/PirateIdle.png"
+dest_files=["res://.godot/imported/PirateIdle.png-dace9babfe4aee5fe807a0223bd2d34f.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://q3p6g7t7tylq"]
+
+[ext_resource type="Script" uid="uid://dk4xssf408hqc" path="res://HUD/range_spawner.gd" id="1_tel2p"]
+
+[node name="UnitSpawner" type="Button"]
+text = "+1 Gun"
+script = ExtResource("1_tel2p")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

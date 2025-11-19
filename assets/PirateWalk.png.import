@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m2elnrcdi27v"
-path="res://.godot/imported/Walk.png-f4405b6664ed1733884cb9e061f761db.ctex"
+path="res://.godot/imported/PirateWalk.png-0f1f0b6b9e17ba7703aea409b0a7f704.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Walk.png"
-dest_files=["res://.godot/imported/Walk.png-f4405b6664ed1733884cb9e061f761db.ctex"]
+source_file="res://assets/PirateWalk.png"
+dest_files=["res://.godot/imported/PirateWalk.png-0f1f0b6b9e17ba7703aea409b0a7f704.ctex"]
 
 [params]
 
