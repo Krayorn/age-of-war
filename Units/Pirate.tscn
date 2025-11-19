@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b3cw2bsyjoajo"]
+
+[node name="Pirate2" type="CharacterBody2D"]

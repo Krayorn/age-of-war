@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb70m3kpoi1p4"]
+
+[ext_resource type="Script" uid="uid://3ck7e2ciglc4" path="res://HUD/unit_spawner.gd" id="1_a3eoh"]
+
+[node name="UnitSpawner" type="Button"]
+text = "+1 Pirate"
+script = ExtResource("1_a3eoh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
