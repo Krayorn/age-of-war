@@ -167,7 +167,7 @@ one_shot = true
 position = Vector2(0, -27)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gbcmk")
-animation = &"walk_and_shoot"
+animation = &"shoot"
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]

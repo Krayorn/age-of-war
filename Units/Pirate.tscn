@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c47dj58nhdgxe" path="res://Units/pirate.gd" id="1_61fmc"]
 [ext_resource type="Texture2D" uid="uid://m2elnrcdi27v" path="res://assets/PirateWalk.png" id="2_blhji"]
 [ext_resource type="Texture2D" uid="uid://bjql3j56eck61" path="res://assets/PirateSlash.png" id="2_h63ht"]
-[ext_resource type="Texture2D" uid="uid://cluk3fapnp3a1" path="res://assets/PirateIdle.png" id="2_jbf7v"]
+[ext_resource type="Texture2D" uid="uid://c1rwb0pa1sh0" path="res://assets/PirateIdle.png" id="2_jbf7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da46e"]
 size = Vector2(39, 63)
@@ -117,10 +117,9 @@ shape = SubResource("CircleShape2D_61fmc")
 one_shot = true
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -27)
-scale = Vector2(2, 2)
+position = Vector2(0, -22.000002)
+scale = Vector2(2, 1.96875)
 sprite_frames = SubResource("SpriteFrames_lr8yu")
 animation = &"idle"
-frame_progress = 0.8835806
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -65,19 +65,14 @@ offset_left = 893.0
 offset_top = 1.0
 offset_right = 933.0
 offset_bottom = 41.0
-scale = Vector2(2, 2)
-theme_override_colors/icon_pressed_color = Color(0.27450982, 0.58431375, 0.6901961, 0.78431374)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_il6x7")
-text = ""
 icon = ExtResource("4_il6x7")
-flat = true
 
 [node name="SpawnRange" parent="CanvasLayer/Spawner" instance=ExtResource("3_mlekv")]
 offset_left = 974.0
-offset_top = 10.0
-offset_right = 1051.0
+offset_top = 1.0
+offset_right = 1014.0
 offset_bottom = 41.0
-text = "+1 Gun"
 
 [connection signal="base_dead" from="PlayerBase" to="." method="_on_player_base_base_dead"]
 [connection signal="base_dead" from="AIBase" to="." method="_on_ai_base_base_dead"]

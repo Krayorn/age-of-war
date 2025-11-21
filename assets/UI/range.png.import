@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1rwb0pa1sh0"
-path="res://.godot/imported/PirateIdle.png-dace9babfe4aee5fe807a0223bd2d34f.ctex"
+uid="uid://bqwuh6lun4duy"
+path="res://.godot/imported/range.png-c0225b6eb3ee9395ea7a95105d65ea01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PirateIdle.png"
-dest_files=["res://.godot/imported/PirateIdle.png-dace9babfe4aee5fe807a0223bd2d34f.ctex"]
+source_file="res://assets/UI/range.png"
+dest_files=["res://.godot/imported/range.png-c0225b6eb3ee9395ea7a95105d65ea01.ctex"]
 
 [params]
 

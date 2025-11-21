@@ -1,6 +1,6 @@
 extends UnitBase
 
-var animationAttackMelee = "melee"
+var animationAttackMelee = "shoot"
 var animationAttackRangeWalk = "walk_and_shoot"
 @onready var rangeHitbox := $RangeHitbox
 
@@ -72,7 +72,6 @@ func _on_animation_finished() -> void:
 	if attack_target:
 		if $animation.animation == animationAttack or $animation.animation == animationAttackMelee or $animation.animation == animationAttackRangeWalk:
 			if is_instance_valid(attack_target) and attack_target.has_method("get_hurt"):
-				print("damage")
 				attack_target.get_hurt(damage)
 			attack_target = null
 			$animation.play(animationWaitingAttack)
