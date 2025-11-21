@@ -1,17 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bumx21n4k1vti"]
+[gd_scene load_steps=7 format=3 uid="uid://bumx21n4k1vti"]
 
 [ext_resource type="Script" uid="uid://cfdmd4efpgxmy" path="res://World/world.gd" id="1_il6x7"]
 [ext_resource type="PackedScene" uid="uid://bfl0puvwvwax1" path="res://World/Base.tscn" id="2_y6flb"]
 [ext_resource type="PackedScene" uid="uid://cb70m3kpoi1p4" path="res://HUD/UnitSpawner.tscn" id="3_mlekv"]
-[ext_resource type="PackedScene" uid="uid://q3p6g7t7tylq" path="res://HUD/RangeSpawner.tscn" id="4_il6x7"]
+[ext_resource type="Texture2D" uid="uid://bekpkdu4dgp6j" path="res://assets/UI/melee.png" id="4_il6x7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cmany"]
 distance = -25.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_il6x7"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_il6x7")
 metadata/_edit_vertical_guides_ = [65.0, 1155.0, 1158.0]
 metadata/_edit_horizontal_guides_ = [640.0, 641.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 324)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 650
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -47,20 +56,31 @@ side = -1
 [node name="AISpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="UnitSpawner" parent="." instance=ExtResource("3_mlekv")]
-offset_left = 1064.0
-offset_top = 9.0
-offset_right = 1141.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UnitSpawner2" parent="." instance=ExtResource("4_il6x7")]
-offset_left = 991.0
-offset_top = 8.0
-offset_right = 1054.0
-offset_bottom = 39.0
+[node name="Spawner" type="Node" parent="CanvasLayer"]
+
+[node name="SpawnMelee" parent="CanvasLayer/Spawner" instance=ExtResource("3_mlekv")]
+offset_left = 893.0
+offset_top = 1.0
+offset_right = 933.0
+offset_bottom = 41.0
+scale = Vector2(2, 2)
+theme_override_colors/icon_pressed_color = Color(0.27450982, 0.58431375, 0.6901961, 0.78431374)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_il6x7")
+text = ""
+icon = ExtResource("4_il6x7")
+flat = true
+
+[node name="SpawnRange" parent="CanvasLayer/Spawner" instance=ExtResource("3_mlekv")]
+offset_left = 974.0
+offset_top = 10.0
+offset_right = 1051.0
+offset_bottom = 41.0
+text = "+1 Gun"
 
 [connection signal="base_dead" from="PlayerBase" to="." method="_on_player_base_base_dead"]
 [connection signal="base_dead" from="AIBase" to="." method="_on_ai_base_base_dead"]
 [connection signal="timeout" from="AISpawnTimer" to="." method="_on_ai_spawn_timer_timeout"]
-[connection signal="spawn_pirate" from="UnitSpawner" to="." method="_on_unit_spawner_spawn_pirate"]
-[connection signal="spawn_pirate_gun" from="UnitSpawner2" to="." method="_on_unit_spawner_2_spawn_pirate_gun"]
+[connection signal="spawn_unit" from="CanvasLayer/Spawner/SpawnMelee" to="." method="_on_spawn_melee_spawn_unit"]
+[connection signal="spawn_unit" from="CanvasLayer/Spawner/SpawnRange" to="." method="_on_spawn_range_spawn_unit"]

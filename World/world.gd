@@ -5,12 +5,12 @@ var gold = 50
 func _ready() -> void:
 	ai_strategy()
 
-func _on_unit_spawner_spawn_pirate() -> void:
+func _on_spawn_melee_spawn_unit() -> void:
 	var unit = preload("res://Units/Pirate.tscn").instantiate()
 	unit.side = 1
 	spawn(unit)
 
-func _on_unit_spawner_2_spawn_pirate_gun() -> void:
+func _on_spawn_range_spawn_unit() -> void:
 	var unit = preload("res://Units/PirateGun.tscn").instantiate()
 	unit.side = 1
 	spawn(unit)

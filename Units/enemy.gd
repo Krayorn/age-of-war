@@ -30,7 +30,7 @@ func _ready():
 	
 	if side == -1:
 		$animation.flip_h = true
-		hitbox.position.x = -26
+		hitbox.position.x *= -1
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.RIGHT * SPEED * side

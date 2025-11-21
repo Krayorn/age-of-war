@@ -1,7 +1,7 @@
 extends Button
 
-signal spawn_pirate
+signal spawn_unit
 
 func _on_pressed() -> void:
-	emit_signal("spawn_pirate")
+	emit_signal("spawn_unit")
 	
