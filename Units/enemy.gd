@@ -13,7 +13,7 @@ var cooldown = false
 var attack_target = null
 
 @onready var hitbox := $Hitbox
-const SPEED = 260.0
+const SPEED = 60.0
 
 func _ready():
 	$animation.animation_finished.connect(_on_animation_finished)

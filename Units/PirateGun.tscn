@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://7e4ljlw1xsr2" path="res://assets/RangeWalk.png" id="3_maod6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da46e"]
-size = Vector2(81, 107.5)
+size = Vector2(44, 56.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfy7y"]
-size = Vector2(35.966255, 28.988678)
+size = Vector2(18.008335, 23.494305)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf3c"]
-size = Vector2(162.01273, 25.156788)
+size = Vector2(105.062, 22.443811)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maod6"]
 atlas = ExtResource("2_maod6")
@@ -120,32 +120,33 @@ collision_mask = 0
 script = ExtResource("1_rfy7y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, -53.25)
+position = Vector2(6, -27.75)
 shape = SubResource("RectangleShape2D_da46e")
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(71, -49.999996)
+position = Vector2(39, -27)
 rotation = -0.0028006176
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(2.861023e-06, -3.8146973e-06)
+position = Vector2(3.8146973e-06, -9.536743e-07)
 shape = SubResource("RectangleShape2D_rfy7y")
 
 [node name="RangeHitbox" type="Area2D" parent="."]
-position = Vector2(173, -52)
+position = Vector2(103, -27.000002)
 rotation = -0.005601235
 scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeHitbox"]
-position = Vector2(0, 1.9073486e-06)
+position = Vector2(-1.9073486e-06, -3.5762787e-07)
 shape = SubResource("RectangleShape2D_mkf3c")
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -64)
-scale = Vector2(4, 4)
+position = Vector2(1, -31)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gbcmk")
 animation = &"idle"
 

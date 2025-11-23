@@ -17,9 +17,9 @@ func _on_spawn_range_spawn_unit() -> void:
 	
 func spawn(unit):
 	if unit.side == 1:
-		unit.global_position = Vector2($PlayerBase.global_position.x + 20, $PlayerBase.global_position.y - 5)
+		unit.global_position = Vector2($PlayerBase.global_position.x + 30, $PlayerBase.global_position.y - 5)
 	else: 
-		unit.global_position = Vector2($AIBase.global_position.x - 10, $AIBase.global_position.y - 5)
+		unit.global_position = Vector2($AIBase.global_position.x - 20, $AIBase.global_position.y - 5)
 	add_child(unit)
 
 func _on_player_base_base_dead() -> void:

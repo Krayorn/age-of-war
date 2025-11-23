@@ -9,7 +9,7 @@ signal base_dead
 func _ready():
 	if side == -1:
 		$AnimatedSprite2D.flip_h = true
-		$ProgressBar.position.x = 25
+		$ProgressBar.position.x = 10
 
 func get_hurt(damage):
 	health -= damage

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b75g2dpact8j3" path="res://assets/Scenery/tent.png" id="2_j265j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyk6o"]
-size = Vector2(52, 210)
+size = Vector2(26, 106)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym7mj"]
 bg_color = Color(0.64134246, 0.18560722, 0.1668297, 1)
@@ -52,13 +52,13 @@ animations = [{
 script = ExtResource("1_ym7mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(26, -106)
+position = Vector2(14, -54)
 shape = SubResource("RectangleShape2D_nyk6o")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_top = -416.0
-offset_right = 27.0
-offset_bottom = -222.0
+offset_top = -243.0
+offset_right = 18.0
+offset_bottom = -125.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_ym7mj")
 value = 100.0
 rounded = true
@@ -66,7 +66,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(27, -106)
-scale = Vector2(1, 1.0023696)
+position = Vector2(14, -54)
+scale = Vector2(0.5, 0.501)
 sprite_frames = SubResource("SpriteFrames_3llgt")
 animation = &"full"
