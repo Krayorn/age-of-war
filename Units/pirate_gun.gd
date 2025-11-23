@@ -15,13 +15,10 @@ func _ready():
 	animationWaitingAttack = "idle"
 
 	if side == 1:
-		rangeHitbox.collision_mask = 1 | 2
-		collision_layer = 1
-		collision_mask = 1 | 2
+		rangeHitbox.collision_mask = pow(2, 1 - 1) + pow(2, 2 - 1)
 	else:
-		collision_layer = 1
-		collision_mask = 1 | 3
-		rangeHitbox.collision_mask = 1 | 3
+		rangeHitbox.position.x *= -1
+		rangeHitbox.collision_mask = pow(2, 1 - 1) + pow(2, 3 - 1)
 
 
 func _physics_process(_delta: float) -> void:

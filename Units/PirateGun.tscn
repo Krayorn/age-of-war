@@ -1,30 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://bfud1ldvrk21k"]
+[gd_scene load_steps=20 format=3 uid="uid://bfud1ldvrk21k"]
 
 [ext_resource type="Texture2D" uid="uid://daogutjmqiq51" path="res://assets/PirateGunWalk.png" id="1_gbcmk"]
 [ext_resource type="Script" uid="uid://dsjjc4wd3e36h" path="res://Units/pirate_gun.gd" id="1_rfy7y"]
 [ext_resource type="Texture2D" uid="uid://c013pgjn7f5or" path="res://assets/RangeShoot.png" id="2_maod6"]
 [ext_resource type="Texture2D" uid="uid://7e4ljlw1xsr2" path="res://assets/RangeWalk.png" id="3_maod6"]
-[ext_resource type="Texture2D" uid="uid://bjql3j56eck61" path="res://assets/PirateSlash.png" id="3_nvllp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_da46e"]
-size = Vector2(39, 63)
+size = Vector2(81, 107.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfy7y"]
-size = Vector2(25.994286, 25.067146)
+size = Vector2(35.966255, 28.988678)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf3c"]
 size = Vector2(162.01273, 25.156788)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_maod6"]
 atlas = ExtResource("2_maod6")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xlusj"]
-atlas = ExtResource("3_nvllp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gicnd"]
-atlas = ExtResource("3_nvllp")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epckm"]
@@ -79,17 +70,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xlusj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gicnd")
-}],
-"loop": false,
-"name": &"melee",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_epckm")
 }, {
 "duration": 1.0,
@@ -140,19 +120,19 @@ collision_mask = 0
 script = ExtResource("1_rfy7y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -31)
+position = Vector2(10.5, -53.25)
 shape = SubResource("RectangleShape2D_da46e")
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(33, -31)
+position = Vector2(71, -49.999996)
 rotation = -0.0028006176
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-9.536743e-07, 0)
+position = Vector2(2.861023e-06, -3.8146973e-06)
 shape = SubResource("RectangleShape2D_rfy7y")
 
 [node name="RangeHitbox" type="Area2D" parent="."]
-position = Vector2(129, -31)
+position = Vector2(173, -52)
 rotation = -0.005601235
 scale = Vector2(0.99999994, 0.99999994)
 
@@ -164,10 +144,10 @@ shape = SubResource("RectangleShape2D_mkf3c")
 one_shot = true
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -27)
-scale = Vector2(2, 2)
+position = Vector2(0, -64)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_gbcmk")
-animation = &"shoot"
+animation = &"idle"
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]

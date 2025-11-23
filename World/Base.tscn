@@ -1,31 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfl0puvwvwax1"]
+[gd_scene load_steps=9 format=3 uid="uid://bfl0puvwvwax1"]
 
 [ext_resource type="Script" uid="uid://c5bdp5o8ef1n4" path="res://World/base.gd" id="1_ym7mj"]
+[ext_resource type="Texture2D" uid="uid://b75g2dpact8j3" path="res://assets/Scenery/tent.png" id="2_j265j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyk6o"]
-size = Vector2(59, 197)
+size = Vector2(52, 210)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym7mj"]
 bg_color = Color(0.64134246, 0.18560722, 0.1668297, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jfhw"]
+atlas = ExtResource("2_j265j")
+region = Rect2(0, 422, 53, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v1hm"]
+atlas = ExtResource("2_j265j")
+region = Rect2(0, 211, 53, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb17w"]
+atlas = ExtResource("2_j265j")
+region = Rect2(0, 0, 53, 211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3llgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jfhw")
+}],
+"loop": true,
+"name": &"critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v1hm")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb17w")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
 [node name="Base" type="StaticBody2D"]
 script = ExtResource("1_ym7mj")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 0.17254902, 1, 1)
-polygon = PackedVector2Array(3, 46, 61, 47, 59, -154, 3, -154)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31.5, -53.5)
+position = Vector2(26, -106)
 shape = SubResource("RectangleShape2D_nyk6o")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 17.0
-offset_top = -354.0
-offset_right = 40.0
-offset_bottom = -160.0
+offset_top = -416.0
+offset_right = 27.0
+offset_bottom = -222.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_ym7mj")
 value = 100.0
 rounded = true
 fill_mode = 3
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(27, -106)
+scale = Vector2(1, 1.0023696)
+sprite_frames = SubResource("SpriteFrames_3llgt")
+animation = &"full"

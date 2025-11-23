@@ -13,21 +13,24 @@ var cooldown = false
 var attack_target = null
 
 @onready var hitbox := $Hitbox
-const SPEED = 60.0
+const SPEED = 260.0
 
 func _ready():
 	$animation.animation_finished.connect(_on_animation_finished)
 	
 	if side == 1:
-		$Hitbox.collision_mask = 1 | 2
-		collision_layer = 1
-		collision_mask = 1 | 2
+		@warning_ignore("narrowing_conversion")
+		collision_layer = pow(2, 1 - 1)
+		$Hitbox.collision_mask = pow(2, 1 - 1) + pow(2, 2 - 1)
+		@warning_ignore("narrowing_conversion")
+		collision_mask = pow(2, 1 - 1) + pow(2, 2 - 1)
 	else:
-		collision_layer = 1
-		collision_mask = 1 | 3
-		$Hitbox.collision_mask = 1 | 3
+		@warning_ignore("narrowing_conversion")
+		collision_layer = pow(2, 1 - 1)
+		@warning_ignore("narrowing_conversion")
+		collision_mask = pow(2, 1 - 1) + pow(2, 3 - 1)
+		$Hitbox.collision_mask = pow(2, 1 - 1) + pow(2, 3 - 1)
 
-	
 	if side == -1:
 		$animation.flip_h = true
 		hitbox.position.x *= -1
