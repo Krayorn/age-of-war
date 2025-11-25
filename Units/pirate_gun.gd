@@ -8,6 +8,7 @@ func _ready():
 	super()
 	health = 30
 	damage = 10
+	reward = 30
 
 	animationIdle = "idle"
 	animationWalk = "walk"

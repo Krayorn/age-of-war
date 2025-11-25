@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://fuugf5c7todm"]
+
+[ext_resource type="Texture2D" uid="uid://d3s0q08djvh7o" path="res://assets/Misc/coin.png" id="1_pnteh"]
+[ext_resource type="Script" uid="uid://8frt47pwdkxc" path="res://Misc/coin.gd" id="2_cerut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cerut"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbly3"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shss5"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlwbe"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whvyu"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jthq0"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5c03"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pwrh"]
+atlas = ExtResource("1_pnteh")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0vyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cerut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbly3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shss5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlwbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whvyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jthq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5c03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pwrh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Coin" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_o0vyd")
+autoplay = "default"
+script = ExtResource("2_cerut")
+
+[node name="AmountLabel" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -11.0
+offset_right = -15.0
+offset_bottom = 12.0
+text = "+ X"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

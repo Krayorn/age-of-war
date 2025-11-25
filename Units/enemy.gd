@@ -3,6 +3,7 @@ class_name UnitBase
 
 var health = 0
 var damage = 0
+var reward = 0
 var animationIdle = "idle"
 var animationWalk = "idle"
 var animationAttack = "idle"
@@ -11,6 +12,8 @@ var animationWaitingAttack = "idle"
 var side := 1.0
 var cooldown = false
 var attack_target = null
+
+signal on_death
 
 @onready var hitbox := $Hitbox
 const SPEED = 60.0
@@ -56,7 +59,8 @@ func _physics_process(_delta: float) -> void:
 func get_hurt(damage_received):
 	health -= damage_received
 	if health <= 0:
-		queue_free() # send money if side == -1
+		emit_signal("on_death", reward, global_position)
+		queue_free()
 
 func attack(body):
 	cooldown = true
